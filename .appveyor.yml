@@ -1,0 +1,11 @@
+version: 1.0.0.{build}
+image: Visual Studio 2015
+services: mssql2012sp1
+build: off
+artifacts:
+- path: db\test_db.dacpac
+  name: Mydacpac
+deploy:
+- provider: Local
+  Mydacpac.deploy_database: true
+  Mydacpac.connection_string: Server=(local)\SQL2012SP1;Database=my_app;Integrated security=SSPI;
