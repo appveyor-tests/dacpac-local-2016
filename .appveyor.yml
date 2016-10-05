@@ -2,12 +2,12 @@ version: 1.0.0.{build}
 image: Visual Studio 2015
 services: mssql2016
 build: off
-on_finish:
-  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
-#artifacts:
-#- path: db\test_db.dacpac
- # name: Mydacpac
-#deploy:
-#- provider: Local
-#  Mydacpac.deploy_database: true
-#  Mydacpac.connection_string: Server=(local)\SQL2016;Database=my_app;Integrated security=SSPI;
+#on_finish:
+#  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+artifacts:
+- path: db\test_db.dacpac
+  name: Mydacpac
+deploy:
+- provider: Local
+  Mydacpac.deploy_database: true
+  Mydacpac.connection_string: Server=(local)\SQL2016;Database=my_app;Integrated security=SSPI;
