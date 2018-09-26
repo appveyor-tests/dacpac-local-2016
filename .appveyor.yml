@@ -7,9 +7,9 @@ services: mssql2016
 init:
 - appveyor version
 
-install:
-- nuget install Microsoft.SqlServer.DacFx.x64 -Version 140.3881.1 -ExcludeVersion
-- '"C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.2 Tools\gacutil.exe" /i .\Microsoft.SqlServer.DacFx.x64\lib\net46\Microsoft.SqlServer.TransactSql.ScriptDom.dll'
+#install:
+#- nuget install Microsoft.SqlServer.DacFx.x64 -Version 140.3881.1 -ExcludeVersion
+#- '"C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.2 Tools\gacutil.exe" /i .\Microsoft.SqlServer.DacFx.x64\lib\net46\Microsoft.SqlServer.TransactSql.ScriptDom.dll'
 
 build: off
 artifacts:
