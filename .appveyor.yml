@@ -6,6 +6,7 @@ services: mssql2016
 
 init:
 - appveyor version
+- echo testing webhook
 
 #install:
 #- nuget install Microsoft.SqlServer.DacFx.x64 -Version 140.3881.1 -ExcludeVersion
